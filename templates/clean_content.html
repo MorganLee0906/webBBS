@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block title %}
+    管理介面
+{% endblock %}
+{% block body %}
+<div class="container">
+    <h1>聯絡簿管理</h1>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">聯絡簿內容清除</label>
+        <p class="fst-italic">Last update:{{time}}</p>
+        {% for key, value in contents.items() %}
+            {% if value != "" %}
+                <li class="list-group-item">{{value}}</li>
+            {% endif %}
+        {% endfor %}
+        <form action='\setting\clean_content' method="post">
+            <button type="submit" class="btn btn-danger">刪除所有聯絡簿</button>
+        </form>
+    </div>
+</div>  
+{% endblock %}

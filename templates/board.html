@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block title %}
+    看板列表
+{% endblock %}
+{% block body %}
+    <div class="container">
+        <h1 class = "display-4">看板列表</h1>
+        <hr class="my-4">
+        <ul class="list-group list-group-numbered">
+            {% for b_name in b_list %}
+                {% if b_name != "" %}
+                    <li class="list-group-item">
+                    <a class="nav-link active" aria-current="page" href="/bbs/{{b_name}}">{{b_name}}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block title %}
+    {{boardname}}信件列表
+{% endblock %}
+{% block body %}
+    <div class="container">
+        <h3 class = "display-4">信件列表</h3>
+        <hr class="my-4">
+        <a class="btn btn-primary" href="/send_mail" role="button">寄信</a>
+        <div class="list-group">
+            {% for key, value in a_list.items() %}
+                <a href="{{key}}" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">{{value.title}}</h5>
+                        <small>{{value.date}}</small>
+                    </div>
+                    <p class="mb-1">{{value.author}}</p>
+                </a>
+            {% endfor %}
+            </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block title %}
+    首頁
+{% endblock %}
+{% block body %}
+    <div class="container">
+        <h1 class = "display-4">首頁</h1>
+        <hr class="my-4">
+        <h3 class = "display-4">最近文章</h3>
+        <div class="list-group">
+            {% for key, value in a_list.items() %}
+                <a href="{{value.board}}/{{key}}" class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">{{value.title}}</h5>
+                    </div>
+                    <p class="mb-1">{{value.author}}</p>
+                    <small>{{value.board}}</small>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

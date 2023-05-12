@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block title %}
+    管理介面
+{% endblock %}
+{% block body %}
+<div class="container">
+    <h1>新增公告</h1>
+    <div class="mb-3">
+        <form action='\announce\add' method="post">
+            <label for="input_example">新增公告內容:</label>
+            <input type="text" class="form-control" name="content" , value = "">
+            <div class="dropdown">
+                <label for="input_example">公告樣式:</label>
+                <select id="input_example" name="user_input">
+                <option selected value =info>info</option>
+                <option value ="primary">primary</option>
+                <option value ="danger">danger</option>
+                <option value ="warning">warning</option>
+                <option value ="success">success</option>
+              </div>
+            <input type="submit" class="btn btn-primary">
+        </form>
+    </div>
+</div>
+{% endblock %}

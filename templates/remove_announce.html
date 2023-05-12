@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block title %}
+    管理介面
+{% endblock %}
+{% block body %}
+<div class="container">
+    <h1>刪除公告</h1>
+    <div class="mb-3">
+        <form action='\announce\remove' method="post">
+            <div class="dropdown">
+                <label for="input_example">請選擇要刪除的公告</label>
+                <select id="choosed" name="choosed">
+                <option selected value ="None">無</option>
+                {% for content in announcement %}
+                <option value ={{content}}>{{content}}</option>
+                {% endfor %}
+            </div>
+            <input type="submit" class="btn btn-danger" value = "刪除">
+        </form>
+    </div>
+</div>
+{% endblock %}

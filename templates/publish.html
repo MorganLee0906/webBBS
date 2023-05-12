@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block title %}
+    發表文章-webBBS
+{% endblock %}
+{% block body %}
+<div class="container">
+    <h1>發表文章</h1>
+    <div class="mb-3">
+        <form action='/publish/submit' method="post">
+            <h6>作者:{{id}}</h6>
+            <div class="dropdown">
+                <label for="board_select">發表看板:</label>
+                <select id="board_select" name="postboard">
+                <option selected value ={{selected}}>{{selected}}</option>
+                {% for brd in b_list %}
+                    <option value ={{brd}}>{{brd}}</option>
+                {% endfor %}
+            </div>
+            <label for="input_example">文章標題:</label>
+            <input type="text" class="form-control" name="title" , value = "">
+            <label for="input_example">文章內容:</label>
+            <textarea type = "text" class = "form-control" name="content" rows="15" required></textarea>
+            <input type="submit" class="btn btn-primary">
+        </form>
+    </div>
+</div>
+{% endblock %}

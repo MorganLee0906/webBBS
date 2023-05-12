@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block title %}
+    管理介面
+{% endblock %}
+{% block body %}
+<div class="container">
+    <h1>數值管理</h1>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">系統數值設定</label>
+        <form action='\setting\value' method="post">
+            <h5>帳號數量:</h5>
+            <input type="text" class="form-control" name="account" , value = {{aaa}}>
+            <h5>聯絡簿數量:</h5>
+            <input type="text" class="form-control" name="content", value = {{aac}}>
+            <button type="submit" class="btn btn-primary">確定</button>
+        </form>
+    </div>
+</div>  
+{% endblock %}

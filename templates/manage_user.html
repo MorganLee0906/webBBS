@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block title %}
+    管理介面
+{% endblock %}
+{% block body %}
+<div class="container">
+    <h1>使用者管理</h1>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">使用者帳密/權限設定</label>
+        <form action='\setting\user' method="post">
+            {%for key, value in user_list.items() %}
+            <h5>帳號{{key}}:</h5><input type="text" class="form-control" name="{{key}} username" , value = {{value[0]}}><h5>密碼:</h5><input type="password" class="form-control" name="{{key}} password", value = {{value[1]}}><h5>權限:</h5><input type="text" class="form-control" name="{{key}} permission" , value = {{value[2]}}>
+            {% endfor %}
+            <button type="submit" class="btn btn-primary">確定</button>
+        </form>
+    </div>
+</div>  
+{% endblock %}

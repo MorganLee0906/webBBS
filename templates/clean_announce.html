@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block title %}
+    管理介面
+{% endblock %}
+{% block body %}
+<div class="container">
+    <h1>公告管理</h1>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">公告清除</label>
+        {% for key, value in announcement.items() %}
+                <li class="list-group-item">{{key}}</li>
+        {% endfor %}
+        <form action='\setting\clean_announce' method="post">
+            <button type="submit" class="btn btn-danger">刪除所有公告</button>
+        </form>
+    </div>
+</div>  
+{% endblock %}
